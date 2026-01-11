@@ -113,7 +113,9 @@
   &lt;script type=&quot;text/javascript&quot;&gt;
     // ここは JavaScript のコメントアウトです。
     // コメントアウトは入力しないでください。
+    // id=&quot;greeting&quot; となっている HTML タグを取得
     let element = document.getElementById(&quot;greeting&quot;);
+    // &quot;Good Evening&quot; というテキストを HTML タグに差し込む
     element.innerText = &quot;Good Evening&quot;;
   &lt;/script&gt;
   &lt;!-- ここまで --&gt;
@@ -151,7 +153,9 @@
 <p>文字に色を付けてみましょう。</p>
 <pre><code><svg data-marp-fitting="svg" data-marp-fitting-code><foreignObject><span data-marp-fitting-svg-content><span data-marp-fitting-svg-content-wrap>&lt;!-- ここから追加 --&gt;
 &lt;script type=&quot;text/javascript&quot;&gt;
+  // id=&quot;greeting&quot; となっている HTML タグを取得
   let element = document.getElementById(&quot;greeting&quot;);
+  // HTML を差し込む
   element.innerHTML = '&lt;span style=&quot;color: red;&quot;&gt;Good Evening&lt;/span&gt;'
 &lt;/script&gt;
 &lt;!-- ここまで --&gt;
