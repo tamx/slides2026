@@ -146,7 +146,7 @@ while (i &lt;= 31) { // ここから繰り返し
 <p>除算を用いて、数字で曜日を出してみましょう。</p>
 <p>0 を日曜日、 6 を土曜日とすると、今月の１月１日は木曜日でしたので、以下のように出来ます。</p>
 <pre><code><svg data-marp-fitting="svg" data-marp-fitting-code><foreignObject><span data-marp-fitting-svg-content><span data-marp-fitting-svg-content-wrap>let wday = 4; // 木曜日
-for (let i = 1; i &lt;= 31; i += 1) { // ここから繰り返し
+for (let i = 1; i &lt;= 31; i++) { // ここから繰り返し
     // １月？日を表示
     console.log(&quot;1月&quot; + i + &quot;日(&quot; + wday + &quot;)&quot;);
     wday++; // 曜日をインクリメント
@@ -174,11 +174,11 @@ console.log(furits[2]); // 2番目を表示
 <pre><code><svg data-marp-fitting="svg" data-marp-fitting-code><foreignObject><span data-marp-fitting-svg-content><span data-marp-fitting-svg-content-wrap>// 曜日の文字列を定数で定義
 const wdays = [&quot;日&quot;, &quot;月&quot;, &quot;火&quot;, &quot;水&quot;, &quot;木&quot;, &quot;金&quot;, &quot;土&quot;];
 let wday = 4; // 木曜日
-for (let i = 1; i &lt;= 31; i += 1) { // ここから繰り返し
+for (let i = 1; i &lt;= 31; i++) { // ここから繰り返し
     // １月？日を表示
     console.log(&quot;1月&quot; + i + &quot;日(&quot; + wdays[wday] + &quot;)&quot;);
     wday++; // 曜日をインクリメント
-    wday = wday % 7; // 7 で割った余りを計算
+    wday %= 7; // 7 で割った余りを計算
 }
 </span></span></foreignObject></svg></code></pre>
 <footer>JavaScript講座 第２回(Tam)</footer>
@@ -196,7 +196,7 @@ console.log(greeting);
 <h2>行で表示</h2>
 <p>文字列の足し算を利用して、カレンダーを１行で表示してみましょう。</p>
 <pre><code><svg data-marp-fitting="svg" data-marp-fitting-code><foreignObject><span data-marp-fitting-svg-content><span data-marp-fitting-svg-content-wrap>let line = &quot;&quot;;
-for (let i = 1; i &lt;= 31; i += 1) { // ここから繰り返し
+for (let i = 1; i &lt;= 31; i++) { // ここから繰り返し
     line += &quot; &quot;; // 数字の前に、区切りのためにスペースを挿入
     line += i; // 日付を追加
 }
@@ -222,7 +222,7 @@ if (i % 2 === 0) { // i を 2 で割った余りが 0 と等しいとき
 <p>日曜日で折り返して、カレンダーっぽくしてみましょう。</p>
 <pre><code><svg data-marp-fitting="svg" data-marp-fitting-code><foreignObject><span data-marp-fitting-svg-content><span data-marp-fitting-svg-content-wrap>let wday = 4; // 木曜日
 let line = &quot;&quot;;
-for (let i = 1; i &lt;= 31; i += 1) { // ここから繰り返し
+for (let i = 1; i &lt;= 31; i++) { // ここから繰り返し
     if (wday === 0) {
         // 日曜なので、行を折り返す。
         console.log(line); // line を出力
