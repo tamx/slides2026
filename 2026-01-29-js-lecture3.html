@@ -60,7 +60,7 @@
 </foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="6" data-paginate="true" data-footer="JavaScript講座 第３回(Tam)" data-marpit-pagination="6" data-marpit-pagination-total="16" style="--paginate:true;--footer:JavaScript講座 第３回(Tam);">
 <h2>ライブラリ</h2>
 <p>JavaScript では、いくつもの便利に使える関数が予め用意されています。</p>
-<pre><code><svg data-marp-fitting="svg" data-marp-fitting-code><foreignObject><span data-marp-fitting-svg-content><span data-marp-fitting-svg-content-wrap>let date = new Date(2026, 1, 29); // 2026年1月29日を取得
+<pre><code><svg data-marp-fitting="svg" data-marp-fitting-code><foreignObject><span data-marp-fitting-svg-content><span data-marp-fitting-svg-content-wrap>let date = new Date(2026, 0, 29); // 2026年1月29日を取得
 let wday = date.getDay(); // date の曜日を数字で取得
 console.log(wday);
 </span></span></foreignObject></svg></code></pre>
@@ -207,7 +207,7 @@ HTML の table タグを使って、カレンダーを表示してみましょ�
 <h2>calendar 関数</h2>
 <pre><code><svg data-marp-fitting="svg" data-marp-fitting-code><foreignObject><span data-marp-fitting-svg-content><span data-marp-fitting-svg-content-wrap>function calendar(year) {
     let html = &quot;&lt;table&gt;&lt;tr&gt;&quot;;
-    let wday = new Date(year, 1, 1).getDay(); // １月１日の曜日を取得
+    let wday = new Date(year, 0, 1).getDay(); // １月１日の曜日を取得
     for (let i = 0; i &lt; wday; i++) {
         html += &quot;&lt;td&gt;&lt;/td&gt;&quot;;
     }
