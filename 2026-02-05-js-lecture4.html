@@ -197,11 +197,11 @@ VSCode の拡張機能 Live Server をインストールします。</p>
 <p>以下のようにすると、ネットワーク経由でデータを取得することが出来ます。</p>
 <p><code>.then</code> の引数は関数になります。</p>
 <pre><code><svg data-marp-fitting="svg" data-marp-fitting-code><foreignObject><span data-marp-fitting-svg-content><span data-marp-fitting-svg-content-wrap>const url = &quot;http://localhost:5500/syukujitsu.csv&quot;
-fetch(url).then(function (response) { // データのダウンロードを始める
-    return response.text()            // ダウンロードしたデータをテキストに変換
-}).then(function (result){            //
-    const holidaysStr = result;       // 結果を代入
-    console.log(holidaysStr);         // 表示
+fetch(url).then(function (response) {                   // データのダウンロードを始める
+    return response.text()                              // ダウンロードしたデータをテキストに変換
+}).then(function (result){                              //
+    const holidaysStr = result;                         // 結果を代入
+    console.log(holidaysStr);                           // 表示
     const table = calendar(2026, holidaysStr);          // カレンダーを呼び出し
     let element2 = document.getElementById(&quot;calendar&quot;);
     element2.innerHTML = table;
