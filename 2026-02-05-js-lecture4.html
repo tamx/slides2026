@@ -182,7 +182,7 @@
 </section>
 </foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="12" data-paginate="true" data-footer="JavaScript講座 第４回(Tam)" data-marpit-pagination="12" data-marpit-pagination-total="19" style="--paginate:true;--footer:JavaScript講座 第４回(Tam);">
 <h2>データの配置</h2>
-<p>今回はこの祝日データを JavaScript に埋め込んで使っていきましょう。</p>
+<p>今回はこの祝日データを JavaScript に読み込んで使っていきましょう。</p>
 <p>本来なら、毎回この祝日データをサーバからダウンロードするのですが、<br />
 ブラウザでの JavaScript のセキュリティにより、同じサイトからの<br />
 ダウンロードしか許可されてないため、今回はローカルに保存します。</p>
@@ -212,13 +212,15 @@ fetch(url).then(function (response) {                   // データのダウン
 </section>
 </foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="14" data-paginate="true" data-footer="JavaScript講座 第４回(Tam)" data-marpit-pagination="14" data-marpit-pagination-total="19" style="--paginate:true;--footer:JavaScript講座 第４回(Tam);">
 <h2>データの解析</h2>
-<p>必要なのは祝日の年月日だけです。祝日の名前は使用しませんので、年月日だけを抽出しましょう。</p>
-<p>split 関数が便利に使えます。</p>
+<p>必要なのは祝日の年月日だけです。祝日の名前は使用しませんので、年月日だけを使えるようにしましょう。</p>
+<p><code>split</code> 関数が便利に使えます。</p>
 <p>使い方：</p>
 <p>以下のようにすることで、変数 str 内の文字列を <code>,</code> 記号で分割し、 array 配列に代入します。</p>
 <pre><code><svg data-marp-fitting="svg" data-marp-fitting-code><foreignObject><span data-marp-fitting-svg-content><span data-marp-fitting-svg-content-wrap>const str = &quot;apple,orange,strawberry&quot;;
 let array = str.split(',');
 console.log(array);
+</span></span></foreignObject></svg></code></pre>
+<pre><code><svg data-marp-fitting="svg" data-marp-fitting-code><foreignObject><span data-marp-fitting-svg-content><span data-marp-fitting-svg-content-wrap>[&quot;apple&quot;, &quot;orange&quot;, &quot;strawberry&quot;]
 </span></span></foreignObject></svg></code></pre>
 <footer>JavaScript講座 第４回(Tam)</footer>
 </section>
@@ -261,8 +263,7 @@ console.log(array);
         return true;                                    // true を返す
       }                                                 //
   }                                                     //
-  return false;                                         // 一致しなかったら
-  false
+  return false;                                         // 一致しなかったら false を返す
 }
 </span></span></foreignObject></svg></code></pre>
 <footer>JavaScript講座 第４回(Tam)</footer>
