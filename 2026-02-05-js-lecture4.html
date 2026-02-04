@@ -216,7 +216,7 @@ fetch(url).then(function (response) {                   // データのダウン
 <p>split 関数が便利に使えます。</p>
 <p>使い方：</p>
 <p>以下のようにすることで、変数 str 内の文字列を <code>,</code> 記号で分割し、 array 配列に代入します。</p>
-<pre><code><svg data-marp-fitting="svg" data-marp-fitting-code><foreignObject><span data-marp-fitting-svg-content><span data-marp-fitting-svg-content-wrap>const str = &quot;applie,orage,strawberry&quot;;
+<pre><code><svg data-marp-fitting="svg" data-marp-fitting-code><foreignObject><span data-marp-fitting-svg-content><span data-marp-fitting-svg-content-wrap>const str = &quot;apple,orange,strawberry&quot;;
 let array = str.split(',');
 console.log(array);
 </span></span></foreignObject></svg></code></pre>
@@ -281,11 +281,11 @@ console.log(array);
     if (wday === 0) {
       html += &quot;&lt;/tr&gt;&lt;tr&gt;&quot;;
     }
-    if (isHoliday(holidays, year, 1, d) === true) {
-        html += '&lt;td style=&quot;color: red;&quot;&gt;' + d + '&lt;/td&gt;';
-    } else {
-        html += &quot;&lt;td&gt;&quot; + d + &quot;&lt;/td&gt;&quot;;
-    }
+    if (isHoliday(holidays, year, 1, d) === true) {       // ここから追加
+        html += '&lt;td style=&quot;color: red;&quot;&gt;' + d + '&lt;/td&gt;'; //
+    } else {                                              //
+        html += &quot;&lt;td&gt;&quot; + d + &quot;&lt;/td&gt;&quot;;                     //
+    }                                                     // ここまで
     wday = (wday + 1) % 7;
   }
   html += &quot;&lt;/tr&gt;&quot;;
