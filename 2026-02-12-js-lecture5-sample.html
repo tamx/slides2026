@@ -1,0 +1,115 @@
+<html>
+
+<head>
+</head>
+
+<body>
+    <input type="text" id="year">
+    <p id="calendar" onclick="display();">Push</p>
+    <script type="text/javascript">
+        function dayHtml(year, month, day, holidays, schedule) {
+            const wday = new Date(year, month - 1, day).getDay();
+            let html = "";
+            if (isHoliday(holidays, year, month, day) === true) {
+                html = '<td style="color: red;">';
+            } else if (wday === 0) {
+                html = '<td style="color: red;">';
+            } else {
+                html = '<td>';
+            }
+            const s = getSchedule(schedule, year, month, day);
+            if (s !== "") {
+                html += '<span style="background-color: yellow;"';
+                html += 'onclick="alert(\'' + s + '\')">';
+            } else {
+                html += '<span>';
+            }
+            html += day + '</span></td>';
+            return html;
+        }
+
+        function calendar(year, holidaysStr) {
+            let holidays = parse(holidaysStr);
+            let schedule = parse(scheduleStr);  //
+            let html = "<table><tr>";
+            let wday = new Date(year, 0, 1).getDay();
+            for (let i = 0; i < wday; i++) {
+                html += "<td></td>";
+            }
+            for (let d = 1; d <= 31; d++) {
+                if (wday === 0) {
+                    html += "</tr><tr>";
+                }
+                html += dayHtml(year, 1, d, holidays, schedule); //
+                wday = (wday + 1) % 7;
+            }
+            html += "</tr>";
+            return html;
+        }
+
+        function parse(holidaysStr) {              // 関数の定義
+            let lines = holidaysStr.split("\n");   // 文字列を改行で分割
+            for (let i = 0; i < lines.length; i++) { //
+                const line = lines[i];             // １行読み込み
+                console.log(i, line);              // 行番号とともに１行表示
+            }                                      //
+            return lines;                          // データを返却
+        };                                         //
+
+        function isHoliday(holidays, year, month, day) {        //
+            const dateStr = year + "/" + month + "/" + day + ","; // "2026/2/5," などと作成
+            for (let i = 0; i < holidays.length; i++) {             // 繰り返し
+                const holiday = holidays[i];                        // 祝日情報を１つ読み込み
+                if (holiday.startsWith(dateStr)) {                // 祝日情報と一致していたら
+                    return true;                                    // true を返す
+                }                                                 //
+            }                                                     //
+            return false;                                         // 一致しなかったら
+            false
+        }
+
+        function getSchedule(schedule, year, month, day) {        //
+            const dateStr = year + "/" + month + "/" + day + ","; // "2026/2/5," などと作成
+            for (let i = 0; i < schedule.length; i++) {           // 繰り返し
+                const s = schedule[i];                            // 情報を１つ読み込み
+                if (s.startsWith(dateStr)) {                      // 一致していたら
+                    return s;                                     // true を返す
+                }                                                 //
+            }                                                     //
+            return "";                                            // 一致しなかったら空文字
+        }
+
+        function display() {
+            // id="year" となっている HTML タグを取得
+            let element1 = document.getElementById('year');
+            // カレンダーを作成
+            let table = calendar(element1.value);
+            // id="calendar" となっている HTML タグを取得
+            let element2 = document.getElementById("calendar");
+            // HTML を差し込む
+            element2.innerHTML = table;
+        }
+
+        let holidaysStr = "";
+        let scheduleStr = "";
+        const url = "http://localhost:5500/syukujitsu.csv";
+        fetch(url).then(function (response) { // データのダウンロードを始める
+            return response.text()            // ダウンロードしたデータをテキストに変換
+        }).then(function (result) {           //
+            holidaysStr = result;             // 結果を代入
+        }).then(function () {                 //
+            const url = "http://localhost:5500/schedule.csv";
+            return fetch(url);                // データのダウンロードを始める
+        }).then(function (response) {         //
+            return response.text()            // ダウンロードしたデータをテキストに変換
+        }).then(function (result) {           //
+            scheduleStr = result;             // 結果を代入
+        }).then(function () {
+            const table = calendar(2026, holidaysStr, scheduleStr); // カレンダーを呼び出し
+            let element2 = document.getElementById("calendar");
+            element2.innerHTML = table;
+        })
+    </script>
+</body>
+
+</html>
