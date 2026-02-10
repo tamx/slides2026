@@ -124,10 +124,10 @@ fetch(url).then(function (response) { // データのダウンロードを始め
 </foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="9" data-paginate="true" data-footer="JavaScript講座 第５回(Tam)" data-marpit-pagination="9" data-marpit-pagination-total="14" style="--paginate:true;--footer:JavaScript講座 第５回(Tam);">
 <h2>calendar 関数の修正</h2>
 <p>calendar 関数の先頭に、以下の１行を追加します。</p>
-<pre><code><svg data-marp-fitting="svg" data-marp-fitting-code><foreignObject><span data-marp-fitting-svg-content><span data-marp-fitting-svg-content-wrap>function calendar(year, holidaysStr) {                   //
-    let holidays = parse(holidaysStr);                   //
+<pre><code><svg data-marp-fitting="svg" data-marp-fitting-code><foreignObject><span data-marp-fitting-svg-content><span data-marp-fitting-svg-content-wrap>function calendar(year, holidaysStr) {                   
+    let holidays = parse(holidaysStr);                   
     let schedule = parse(scheduleStr);                   // この行を追加
-    let html = &quot;&lt;table&gt;&lt;tr&gt;&quot;;                            //
+    let html = &quot;&lt;table&gt;&lt;tr&gt;&quot;;                            
     let wday = new Date(year, 0, 1).getDay();
     for (let i = 0; i &lt; wday; i++) {
         html += &quot;&lt;td&gt;&lt;/td&gt;&quot;;
@@ -153,7 +153,7 @@ fetch(url).then(function (response) { // データのダウンロードを始め
     for (let i = 0; i &lt; schedule.length; i++) {           // 繰り返し
         const s = schedule[i];                            // 情報を１つ読み込み
         if (s.startsWith(dateStr)) {                      // 一致していたら
-            return s;                                     // true を返す
+            return s;                                     // 予定を返す
         }                                                 //
     }                                                     //
     return &quot;&quot;;                                            // 一致しなかったら空文字
@@ -188,10 +188,10 @@ dayHtml 関数を修正していきます。</p>
 <footer>JavaScript講座 第５回(Tam)</footer>
 </section>
 </foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="12" data-paginate="true" data-footer="JavaScript講座 第５回(Tam)" data-marpit-pagination="12" data-marpit-pagination-total="14" style="--paginate:true;--footer:JavaScript講座 第５回(Tam);">
-<h2>window.alert 関数</h2>
+<h2>alert 関数</h2>
 <p>マウスでクリックしたら、予定を表示させるようにしましょう。</p>
-<p>ここで <code>window.alert</code> 関数が便利に使えます。</p>
-<pre><code><svg data-marp-fitting="svg" data-marp-fitting-code><foreignObject><span data-marp-fitting-svg-content><span data-marp-fitting-svg-content-wrap>window.alert(&quot;Hello&quot;);
+<p>ここで <code>alert</code> 関数が便利に使えます。</p>
+<pre><code><svg data-marp-fitting="svg" data-marp-fitting-code><foreignObject><span data-marp-fitting-svg-content><span data-marp-fitting-svg-content-wrap>alert(&quot;Hello&quot;);
 </span></span></foreignObject></svg></code></pre>
 <p>とすると、ブラウザの上で &quot;Hello&quot; が表示されたダイアログが表示されます。</p>
 <p>今回はこれを利用してきます。</p>
