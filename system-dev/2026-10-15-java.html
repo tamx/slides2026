@@ -139,7 +139,7 @@ price = &quot;100円&quot;;    // ← コンパイル時にエラー！
 <h2>1. Web アプリと Java アプリ ── 何が違う？</h2>
 <h3>1-1. これまでの「Web アプリ」の仕組み</h3>
 <p>これまでの POS システムは、こんな仕組みで動いていました。</p>
-<pre><code><svg data-marp-fitting="svg" data-marp-fitting-code><foreignObject><span data-marp-fitting-svg-content><span data-marp-fitting-svg-content-wrap>┌─────────────┐   HTTP リクエスト   ┌──────────────────┐   SQL   ┌──────────┐
+<pre><code><svg data-marp-fitting="svg" data-marp-fitting-code><foreignObject><span data-marp-fitting-svg-content><span data-marp-fitting-svg-content-wrap>┌─────────────┐   HTTP リクエスト    ┌──────────────────┐   SQL   ┌──────────┐
 │  ブラウザ    │ ──────────────────▶ │  Apache + PHP    │ ──────▶ │  MySQL   │
 │  (画面表示)  │                     │  (サーバー側処理)  │        │  (DB)    │
 │             │ ◀────────────────── │  HTML/JSON を返す │ ◀────── │          │
@@ -199,17 +199,17 @@ price = &quot;100円&quot;;    // ← コンパイル時にエラー！
 <p>Lesson 13 では、<strong>ブラウザも Web サーバーも使いません！</strong></p>
 <p>すべてが <strong>1 つの <code>.jar</code> ファイル（Java の実行ファイル）</strong> に詰め込まれています。</p>
 <pre><code><svg data-marp-fitting="svg" data-marp-fitting-code><foreignObject><span data-marp-fitting-svg-content><span data-marp-fitting-svg-content-wrap>                    ┌──────────────────────────────────────────┐
-                    │          lesson13-javafx-1.0.0.jar        │
+                    │          lesson13-javafx-1.0.0.jar       │
                     │  ┌────────────┐  ┌─────────────────────┐ │
-  ダブルクリック or  │  │  JavaFX UI  │  │  JDBC (DB接続処理)   │ │
-  java -jar で起動  │  │  (画面部品)  │  │  SQL を直接送信     │ │
+  ダブルクリック or  │  │  JavaFX UI  │  │  JDBC (DB接続処理)    │ │
+  java -jar で起動  │  │  (画面部品)  │  │  SQL を直接送信        │ │
  ──────────────────▶│  └─────┬──────┘  └──────────┬──────────┘ │
                     │        │ 画面表示              │ SQL        │
                     └────────┼───────────────────────┼───────────┘
                              ▼                       ▼
                     ┌──────────────┐         ┌──────────────┐
                     │ デスクトップ   │         │    MySQL     │
-                    │  ウィンドウ   │         │  (演習サーバ) │
+                    │  ウィンドウ    │         │  (演習サーバ)  │
                     └──────────────┘         └──────────────┘
 </span></span></foreignObject></svg></code></pre>
 <p>▲ ブラウザ不要、Web サーバー（Apache）不要！「画面」も「DB接続」も１ファイルに全部入っている！</p>
@@ -472,7 +472,7 @@ price = &quot;100円&quot;;    // ← コンパイル時にエラー！
 </section>
 </foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="28" data-paginate="true" data-footer="Java で動かす POS レジ(Lesson 13)" data-marpit-pagination="28" data-marpit-pagination-total="47" style="--paginate:true;--footer:Java で動かす POS レジ(Lesson 13);">
 <h3>3-3. ③ start() ── 画面の組み立て</h3>
-<p>Python/HTML では HTML タグをテキストで書きますが、Java では <strong>コードで部品を作って並べます。</strong></p>
+<p>HTML/JavaScript/PHP では HTML タグをテキストで書きますが、Java では <strong>コードで部品を作って並べます。</strong></p>
 <pre><code><svg data-marp-fitting="svg" data-marp-fitting-code><foreignObject><span data-marp-fitting-svg-content><span data-marp-fitting-svg-content-wrap>┌──────────────────────────────────────────────────────────────┐
 │  HTML の書き方                │  Java (JavaFX) の書き方        │
 │──────────────────────────────│──────────────────────────────│
