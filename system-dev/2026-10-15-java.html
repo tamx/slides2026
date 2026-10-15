@@ -140,11 +140,11 @@ price = &quot;100円&quot;;    // ← コンパイル時にエラー！
 <h2>1. Web アプリと Java アプリ ── 何が違う？</h2>
 <h3>1-1. これまでの「Web アプリ」の仕組み</h3>
 <p>これまでの POS システムは、こんな仕組みで動いていました。</p>
-<pre><code><svg data-marp-fitting="svg" data-marp-fitting-code><foreignObject><span data-marp-fitting-svg-content><span data-marp-fitting-svg-content-wrap>┌─────────────┐   HTTP リクエスト    ┌──────────────────┐   SQL   ┌──────────┐
-│  ブラウザ    │ ──────────────────▶ │  Apache + PHP    │ ──────▶ │  MySQL   │
-│  (画面表示)  │                     │  (サーバー側処理)  │        │  (DB)    │
-│             │ ◀────────────────── │  HTML/JSON を返す │ ◀────── │          │
-└─────────────┘   HTML / JSON 返却  └──────────────────┘         └──────────┘
+<pre><code><svg data-marp-fitting="svg" data-marp-fitting-code><foreignObject><span data-marp-fitting-svg-content><span data-marp-fitting-svg-content-wrap>┌───────────┐   HTTP リクエスト    ┌──────────────────┐   SQL   ┌──────────┐
+│ ブラウザ   │ ──────────────────▶ │  Apache + PHP    │ ──────▶ │  MySQL   │
+│ (画面表示) │                     │  (サーバー側処理)  │        │  (DB)    │
+│           │ ◀────────────────── │  HTML/JSON を返す │ ◀────── │          │
+└───────────┘   HTML / JSON 返却  └──────────────────┘         └──────────┘
 </span></span></foreignObject></svg></code></pre>
 <p>▲ 3つの「部品」がネットワーク経由で連携して動いている</p>
 <footer>Java で動かす POS レジ(Lesson 13)</footer>
