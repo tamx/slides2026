@@ -278,17 +278,17 @@ price = &quot;100円&quot;;    // ← コンパイル時にエラー！
 <p>Java でデスクトップアプリを作るには、３種類のソフトウェアが必要です。</p>
 <p>料理に例えると…</p>
 <pre><code><svg data-marp-fitting="svg" data-marp-fitting-code><foreignObject><span data-marp-fitting-svg-content><span data-marp-fitting-svg-content-wrap>┌──────────────────────────────────────────────────────────────┐
-│                    Java アプリを作る「料理」                    │
+│                    Java アプリを作る「料理」                   │
 │                                                              │
-│  <img class="emoji" draggable="false" alt="🔥" src="https://twemoji.maxcdn.com/2/svg/1f525.svg" data-marp-twemoji=""/> コンロ (熱源)          →  JDK (Java Development Kit)     │
+│  <img class="emoji" draggable="false" alt="🔥" src="https://twemoji.maxcdn.com/2/svg/1f525.svg" data-marp-twemoji=""/> コンロ (熱源)          →  JDK (Java Development Kit)      │
 │     Java プログラムを                                         │
-│     「コンパイル＆実行」する基盤                               │
+│     「コンパイル＆実行」する基盤                                │
 │                                                              │
-│  <img class="emoji" draggable="false" alt="📦" src="https://twemoji.maxcdn.com/2/svg/1f4e6.svg" data-marp-twemoji=""/> 宅配便の箱 (まとめ役)   →  Maven (ビルドツール)            │
+│  <img class="emoji" draggable="false" alt="📦" src="https://twemoji.maxcdn.com/2/svg/1f4e6.svg" data-marp-twemoji=""/> 宅配便の箱 (まとめ役)   →  Maven (ビルドツール)             │
 │     必要な材料（ライブラリ）を                                  │
-│     自動で集めて、1つの実行ファイルに梱包する                    │
+│     自動で集めて、1つの実行ファイルに梱包する                     │
 │                                                              │
-│  🍽 盛り付け皿 (見た目)     →  JavaFX SDK (GUI フレームワーク) │
+│  🍽 盛り付け皿 (見た目)     →  JavaFX SDK (GUI フレームワーク)   │
 │     ボタン・入力欄・テーブルなど                                │
 │     デスクトップ画面の「部品」を提供する                         │
 └──────────────────────────────────────────────────────────────┘
@@ -345,7 +345,7 @@ price = &quot;100円&quot;;    // ← コンパイル時にエラー！
 │      &quot;axios&quot;: &quot;^1.0&quot;       │      &lt;artifactId&gt;      │
 │    }                       │        javafx-controls │
 │                            │      &lt;/artifactId&gt;     │
-│  npm install  → 自動DL     │  mvn package → 自動DL   │
+│  npm install  → 自動DL      │  mvn package → 自動DL  │
 │  node_modules/ に保存       │  ~/.m2/ に保存          │
 └─────────────────────────────────────────────────────┘
 </span></span></foreignObject></svg></code></pre>
@@ -491,21 +491,21 @@ price = &quot;100円&quot;;    // ← コンパイル時にエラー！
 <p>HTML/JavaScript/PHP では HTML タグをテキストで書きますが、Java では <strong>コードで部品を作って並べます。</strong></p>
 <pre><code><svg data-marp-fitting="svg" data-marp-fitting-code><foreignObject><span data-marp-fitting-svg-content><span data-marp-fitting-svg-content-wrap>┌──────────────────────────────────────────────────────────────┐
 │  HTML の書き方                │  Java (JavaFX) の書き方        │
-│──────────────────────────────│──────────────────────────────│
+│──────────────────────────────│───────────────────────────────│
 │  &lt;div style=&quot;display:flex;   │  VBox mainLayout = new VBox();│
 │    flex-direction:column&quot;&gt;   │                               │
-│    &lt;h1&gt;タイトル&lt;/h1&gt;          │  Label title =               │
-│    &lt;input type=&quot;text&quot;&gt;       │    new Label(&quot;タイトル&quot;);     │
+│    &lt;h1&gt;タイトル&lt;/h1&gt;          │  Label title =                │
+│    &lt;input type=&quot;text&quot;&gt;       │    new Label(&quot;タイトル&quot;);      │
 │    &lt;button&gt;検索&lt;/button&gt;     │  TextField input =            │
 │    &lt;table&gt;...&lt;/table&gt;        │    new TextField();           │
-│  &lt;/div&gt;                      │  Button btn =                │
+│  &lt;/div&gt;                      │  Button btn =                 │
 │                              │    new Button(&quot;検索&quot;);        │
-│  ↑ テキストで構造を「書く」   │  TableView table =           │
+│  ↑ テキストで構造を「書く」     │  TableView table =            │
 │                              │    new TableView();           │
-│                              │  mainLayout.getChildren()    │
-│                              │    .addAll(title,input,btn,  │
-│                              │            table);           │
-│                              │  ↑ コードで部品を「組み立てる」│
+│                              │  mainLayout.getChildren()     │
+│                              │    .addAll(title,input,btn,   │
+│                              │            table);            │
+│                              │  ↑ コードで部品を「組み立てる」  │
 └──────────────────────────────────────────────────────────────┘
 </span></span></foreignObject></svg></code></pre>
 <footer>Java で動かす POS レジ(Lesson 13)</footer>
@@ -549,13 +549,13 @@ Java:
   │   │ Java: PreparedStatement ps =                     │
   │   │         conn.prepareStatement(&quot;SELECT ...&quot;);     │
   │   │        ps.setInt(1, salesNo);                    │
-  │   │        ResultSet rs = ps.executeQuery();          │
+  │   │        ResultSet rs = ps.executeQuery();         │
   │   └──────────────────────────────────────────────────┘
       ↓
   ⑤ 結果を1行ずつ読み取り → TableView に追加
   │   ┌──────────────────────────────────────────────────┐
   │   │ PHP:  while ($row = $stmt-&gt;fetch()) {            │
-  │   │         $row['mcu_name'];                         │
+  │   │         $row['mcu_name'];                        │
   │   │        }                                         │
   │   │                                                  │
   │   │ Java: while (rs.next()) {                        │
@@ -584,13 +584,13 @@ Java:
 </foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="34" data-paginate="true" data-footer="Java で動かす POS レジ(Lesson 13)" data-marpit-pagination="34" data-marpit-pagination-total="48" style="--paginate:true;--footer:Java で動かす POS レジ(Lesson 13);">
 <pre><code><svg data-marp-fitting="svg" data-marp-fitting-code><foreignObject><span data-marp-fitting-svg-content><span data-marp-fitting-svg-content-wrap>ビルドの 3 ステップ（Maven が全自動でやってくれる！）
 
-  ┌─────────────┐    ┌──────────────┐    ┌──────────────────────┐
-  │ ① コンパイル  │ ➔  │ ② 依存解決    │ ➔  │ ③ パッケージング      │
-  │             │    │              │    │                      │
+  ┌──────────────┐    ┌───────────────┐    ┌──────────────────────┐
+  │ ① コンパイル  │ ➔ │ ② 依存解 決    │ ➔  │ ③ パッケージング      │
+  │              │    │               │    │                      │
   │ .java ファイル│    │ JavaFX / MySQL│    │ すべてをまとめて       │
-  │  を機械語に   │    │ ライブラリを   │    │ 1つの .jar ファイルに  │
-  │  変換する    │    │ 自動ダウンロード│    │ 梱包する (Fat JAR)   │
-  └─────────────┘    └──────────────┘    └──────────────────────┘
+  │  を機械語に   │    │ ライブラリを    │    │ 1つの .jar ファイルに │
+  │  変換する     │    │ 自動ダウンロード│    │ 梱包する (Fat JAR)    │
+  └──────────────┘    └───────────────┘    └──────────────────────┘
    javac コマンド      Maven が処理         maven-shade-plugin
 </span></span></foreignObject></svg></code></pre>
 <footer>Java で動かす POS レジ(Lesson 13)</footer>
@@ -646,16 +646,16 @@ Windows のネイティブ機能（ウィンドウ描画）を使用する際に
 <pre><code><svg data-marp-fitting="svg" data-marp-fitting-code><foreignObject><span data-marp-fitting-svg-content><span data-marp-fitting-svg-content-wrap>┌─────────────────────────────────────────────────────────────────┐
 │  Lesson 13 POSレジ 売上情報検索 (JavaFX GUI版)                    │
 ├─────────────────────────────────────────────────────────────────┤
-│  【ログイン受講者環境: sqluser99】                                  │
+│  【ログイン受講者環境: sqluser99】                                 │
 │  ─────────────────────────────────────────────────────────────  │
-│  売上番号: [ 1005    ]  [ 検索 ]                                   │
+│  売上番号: [ 1005    ]  [ 検索 ]                                  │
 │  ─────────────────────────────────────────────────────────────  │
-│  【売上番号: 1005】 会員氏名: 山崎 さくら | 小計: ¥2,430 | ...     │
+│  【売上番号: 1005】 会員氏名: 山崎 さくら | 小計: ¥2,430 | ...      │
 │  ─────────────────────────────────────────────────────────────  │
 │  No │ 商品コード  │ 商品名                 │ 単価    │ 数量 │ 金額 │
-│  ───┼────────────┼────────────────────────┼─────────┼──────┼─────│
-│   1 │ P000082    │ トイレットペーパー 12R  │ ¥330   │  2   │ ¥660│
-│   2 │ P000011    │ ヨーグルト(脂肪0%)      │ ¥108   │  3   │ ¥324│
+│  ───┼────────────┼───────────────────────┼─────────┼──────┼─────│
+│   1 │ P000082    │ トイレットペーパー 12R   │ ¥330   │  2   │ ¥660│
+│   2 │ P000011    │ ヨーグルト(脂肪0%)       │ ¥108   │  3   │ ¥324│
 └─────────────────────────────────────────────────────────────────┘
 </span></span></foreignObject></svg></code></pre>
 <footer>Java で動かす POS レジ(Lesson 13)</footer>
@@ -765,9 +765,9 @@ Java（コンパイラ言語）:
                     javac が事前変換              JVM が実行
 
   ┌──────────────────────────────────────────────────┐
-  │ JS のメリット: ファイルを変更したら即反映できる      │
-  │ Java のメリット: 実行前にエラーを全部発見してくれる  │
-  │   例) 「この変数は存在しません」→ 実行前に気づける！  │
+  │ JS のメリット: ファイルを変更したら即反映できる       │
+  │ Java のメリット: 実行前にエラーを全部発見してくれる    │
+  │   例) 「この変数は存在しません」→ 実行前に気づける！   │
   └──────────────────────────────────────────────────┘
 </span></span></foreignObject></svg></code></pre>
 <footer>Java で動かす POS レジ(Lesson 13)</footer>
@@ -783,17 +783,17 @@ Java（コンパイラ言語）:
 <h2>6. まとめ ── 今日覚えてほしいこと</h2>
 <h3>6-1. 今日のポイント 3 つ</h3>
 <pre><code><svg data-marp-fitting="svg" data-marp-fitting-code><foreignObject><span data-marp-fitting-svg-content><span data-marp-fitting-svg-content-wrap>┌─────────────────────────────────────────────────────────┐
-│  ① Java アプリは「ビルド」してから動かす                  │
-│     .java → (コンパイル) → .class → (梱包) → .jar        │
-│     Web のように「ファイルを置けばすぐ動く」ではない       │
+│  ① Java アプリは「ビルド」してから動かす                    │
+│     .java → (コンパイル) → .class → (梱包) → .jar         │
+│     Web のように「ファイルを置けばすぐ動く」ではない          │
 ├─────────────────────────────────────────────────────────┤
 │  ② 考え方は JS/Python と同じ、書き方だけが違う              │
-│     イベント処理・DB接続・SQL文の考え方はそのまま使える！  │
-│     「部品の組み立て方」が HTML タグではなくコードになる   │
+│     イベント処理・DB接続・SQL文の考え方はそのまま使える！     │
+│     「部品の組み立て方」が HTML タグではなくコードになる      │
 ├─────────────────────────────────────────────────────────┤
-│  ③ Maven が「npm」の役割をしてくれる                     │
-│     pom.xml に書くだけでライブラリを自動取得              │
-│     build.bat 1 本で「コンパイル + 梱包」まで全自動       │
+│  ③ Maven が「npm」の役割をしてくれる                       │
+│     pom.xml に書くだけでライブラリを自動取得                │
+│     build.bat 1 本で「コンパイル + 梱包」まで全自動         │
 └─────────────────────────────────────────────────────────┘
 </span></span></foreignObject></svg></code></pre>
 <footer>Java で動かす POS レジ(Lesson 13)</footer>
