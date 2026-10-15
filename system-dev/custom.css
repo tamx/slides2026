@@ -1,0 +1,8 @@
+/* @theme custom */
+/* Author: Your Name */
+
+@import "default";
+
+pre {
+  font-family: 'Courier New', monospace;
+}
